@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="row">
+
+        <div class="form">
+            <div class="logo">
+
+                <img class="favicon"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/800px-Google_%22G%22_Logo.svg.png"
+                    alt="">
+            </div>
+            <div class="title">
+                <span>Sign up Google</span>
+            </div>
+            <div class="form-row">
+                <div class="text">
+                    <span>Email or phone</span>
+                    <a href="" class="link">Forget email?</a>
+                </div>
+                <div class="input">
+                    <input type="email" name="" id="">
+                </div>
+                <div class="text">
+                    <span>Password</span>
+                    <a class="link" href="">Forget password?</a>
+                </div>
+                <div class="input">
+                    <!-- <i class="far fa-eye" id="togglePassword"></i> -->
+                    <input type="password" name="" id="id_password-1">
+                </div>
+                <div class="input">
+                    <!-- <i class="far fa-eye" id="togglePassword"></i> -->
+                    <input type="password" name="" id="id_password-2">
+                </div>
+                <div class="text">
+                    <span>Not your computer? Use Guest mode to sign in privately</span>
+                </div>
+                <div>
+                    <a href="" class="link">Learn more</a>
+                </div>
+                <div class="footer">
+                    <a href="" class="link">Create account</a>
+                </div>
+                <div class="submit">
+                    <button>Sign in</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    // function createEye(i) {
+    //     return `<i class="far fa-eye" id="togglePassword${i}"></i>`
+    // }
+
+    hihi(document.querySelector('#id_password-1'))
+    hihi(document.querySelector('#id_password-2'))
+    var num = 1
+    function hihi(input) {
+        // createEye(num)
+        const icon = document.createElement('i')
+        icon.className = 'far fa-eye'
+        icon.id = 'togglePassword' + num
+        input.parentElement.appendChild(icon)
+        const togglePassword = document.querySelector(`#togglePassword${num}`);
+        // const password = document.querySelector('#id_password');
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = input.getAttribute('type') === 'password' ? 'text' : 'password';
+            input.setAttribute('type', type);
+            // toggle the eye slash icon
+            this.classList.toggle('fa-eye-slash')
+        });
+        num++
+    }
+    // console.log()
+</script>
